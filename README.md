@@ -15,7 +15,7 @@ host provider, and prevent them from being locked to a specfic cloud vendor to h
 
 ## Technologies well suited to solve the potential challenges
 
-From Eric's pipeline: Apache Airflow, Hadddop HDFS, Apache Spark, Amazon Elastic Load Balancer, Cockroach DB, Dash
+From Eric's pipeline: Apache Airflow, Hadoop HDFS, Apache Spark, Amazon Elastic Load Balancer, Cockroach DB, Dash
 New Technologies adopted: Docker,Kubernetes Orchestration? 
 
 ## Proposed Architecture
