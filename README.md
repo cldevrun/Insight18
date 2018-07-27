@@ -12,8 +12,10 @@ using virtualization.
 
 ## Technologies well suited to solve the potential challenges
 
-Jenkins, Docker, Cockroach DB, Kubernetes Orchestration? 
+From Eric's pipeline: Apache Airflow, Hadddop HDFS, Apache Spark, Amazon Elastic Load Balancer, Cockroach DB, Dash
+New Technologies adopted: Docker,Kubernetes Orchestration? 
 
 ## Proposed Architecture
 
-Build a unique streaming app & integrate with db and container tools, use Jenkins for CI/CD pipeline
+Take Eric's work and encompass each aspect of his app inside a Docker container. Kubernetes will be used
+to coordinate the communication between the containers that host different aspects of the application. 
