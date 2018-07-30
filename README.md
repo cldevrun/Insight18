@@ -30,3 +30,6 @@ to coordinate the communication between the containers that host different aspec
 [Install Spark on AWS](https://sparkour.urizone.net/recipes/installing-ec2/)
 
 [Maven Repo for Spark Releases](https://mvnrepository.com/artifact/org.apache.spark/spark-core_2.11/2.1.0)
+
+[Overriding Jackson Dependencies incompatibilities](https://stackoverflow.com/questions/43841091/spark2-1-0-incompatible-jackson-versions-2-7-6)
+
