@@ -22,3 +22,9 @@ New Technologies adopted: Docker,Kubernetes Orchestration?
 
 Take Eric's work and encompass each aspect of his app inside a Docker container. Kubernetes will be used
 to coordinate the communication between the containers that host different aspects of the application. 
+
+# Sources
+
+[Eric Pinkham's data pipeline](https://github.com/ericapinkham/Insight_DE_GUS.git)
+[Install Spark on AWS](https://sparkour.urizone.net/recipes/installing-ec2/)
+[Maven Repo for Spark Releases](https://mvnrepository.com/artifact/org.apache.spark/spark-core_2.11/2.1.0)
