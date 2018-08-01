@@ -7,7 +7,7 @@ RUN mkdir /pythonFrontEnd
 # Add current directory files to the Dockerfile directory
 ADD ./* /pythonFrontEnd/
 
-#Set working directory for future RUN, CMD, ENTRYPOINT, COPY and ADD instructions that follow it in the Dockerfile.
+# Set working directory for future RUN, CMD, ENTRYPOINT, COPY and ADD instructions that follow it in the Dockerfile.
 WORKDIR /pythonFrontEnd
 
 # Install Python modules
