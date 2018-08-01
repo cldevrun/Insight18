@@ -1,6 +1,6 @@
 # Project Idea 
 My project explores the challenge of containerizing a data engineering pipeline with a database.
-To help achieve this challenge, I will be using the [work of Eric Pinkham](https://github.com/ericapinkham/Insight_DE_GUS.git), a Insight Data Engineering
+To help achieve this challenge, I will be using the [work of Eric Pinkham](https://github.com/ericapinkham/Insight_DE_GUS.git), an Insight Data Engineering
 fellow of the 2018B session, and containerize his project.  
 
 ## Purpose / common use case
