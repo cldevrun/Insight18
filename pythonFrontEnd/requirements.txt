@@ -1,0 +1,10 @@
+# Will be read by Dockerfile and be installed in the container image
+dash
+dash-core-components
+dash-html-components
+pandas
+colorsys
+psycopg2
+gunicorn
+flask
+data_access_layer
