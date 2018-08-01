@@ -33,3 +33,4 @@ to coordinate the communication between the containers that host different aspec
 
 [Overriding Jackson Dependencies incompatibilities](https://stackoverflow.com/questions/43841091/spark2-1-0-incompatible-jackson-versions-2-7-6)
 
+[Python ODBC Docker dependency](https://stackoverflow.com/questions/46405777/connect-docker-python-to-sql-server-with-pyodbc)
