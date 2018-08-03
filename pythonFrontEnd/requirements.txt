@@ -1,5 +1,5 @@
 # Will be read by Dockerfile and be installed in the container image
-dash
+dash==0.22.0
 dash-core-components
 dash-html-components
 pandas

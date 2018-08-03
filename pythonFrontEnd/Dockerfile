@@ -32,3 +32,4 @@ EXPOSE 5001
 # Main purpose of CMD is to provide defaults for an existing container, will get app running.
 # CMD ./run_server.sh
 CMD python app.py
+
