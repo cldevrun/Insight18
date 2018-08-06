@@ -36,3 +36,5 @@ to coordinate the communication between the containers that host different aspec
 [Python ODBC Docker dependency](https://stackoverflow.com/questions/46405777/connect-docker-python-to-sql-server-with-pyodbc)
 
 [STS:AssumeRole](https://github.com/aws/aws-cli/issues/2279)
+
+[CockroachDB Yaml file](https://github.com/kubernetes/examples/blob/master/staging/cockroachdb/cockroachdb-statefulset.yaml)
