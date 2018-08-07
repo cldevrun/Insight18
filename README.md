@@ -38,3 +38,5 @@ to coordinate the communication between the containers that host different aspec
 [STS:AssumeRole](https://github.com/aws/aws-cli/issues/2279)
 
 [CockroachDB Yaml file](https://github.com/kubernetes/examples/blob/master/staging/cockroachdb/cockroachdb-statefulset.yaml)
+
+[Kubernetes command cheat sheet](https://carlos.mendible.com/2018/03/18/my-kubectl-cheat-sheet/)
