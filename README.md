@@ -40,3 +40,5 @@ to coordinate the communication between the containers that host different aspec
 [CockroachDB Yaml file](https://github.com/kubernetes/examples/blob/master/staging/cockroachdb/cockroachdb-statefulset.yaml)
 
 [Kubernetes command cheat sheet](https://carlos.mendible.com/2018/03/18/my-kubectl-cheat-sheet/)
+
+[Run Scala Spark shell within master controller](http://blog.madhukaraphatak.com/scaling-spark-with-kubernetes-part-6/)
