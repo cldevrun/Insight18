@@ -3,6 +3,8 @@ apiVersion: v1
 metadata:
   name: spark-master
 spec:
+  type: ExternalName
+  externalName: hdfs-service-name.hdfs-cluster.svc.cluster.local
   ports:
     - port: 7077
       targetPort: 7077
