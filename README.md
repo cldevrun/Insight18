@@ -46,3 +46,5 @@ to coordinate the communication between the containers that host different aspec
 [Run Scala Spark shell within master controller](http://blog.madhukaraphatak.com/scaling-spark-with-kubernetes-part-6/)
 
 [K8s services in different namespaces](https://stackoverflow.com/questions/37221483/kubernetes-service-located-in-another-namespace)
+
+[Assigning namespaces to contexts](https://dzone.com/articles/the-why-and-how-of-kubernetes-namespaces)
