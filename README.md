@@ -41,4 +41,6 @@ to coordinate the communication between the containers that host different aspec
 
 [Kubernetes command cheat sheet](https://carlos.mendible.com/2018/03/18/my-kubectl-cheat-sheet/)
 
+[Spark K8s example](https://github.com/kubernetes/examples/tree/master/staging/spark)
+
 [Run Scala Spark shell within master controller](http://blog.madhukaraphatak.com/scaling-spark-with-kubernetes-part-6/)
