@@ -1,0 +1,10 @@
+{
+    "kind": "Namespace",
+    "apiVersion": "v1",
+    "metadata": {
+        "name": "hdfs-cluster",
+        "labels": {
+            "name": "hdfs-cluster"
+        }
+    }
+}
