@@ -52,3 +52,5 @@ to coordinate the communication between the containers that host different aspec
 [Exposing K8s ports](http://alesnosek.com/blog/2017/02/14/accessing-kubernetes-pods-from-outside-of-the-cluster/)
 
 [spark-submit with k8s](https://banzaicloud.com/blog/spark-k8s-internals/)
+
+[2.3.1 Spark Docker image from Google](https://github.com/GoogleCloudPlatform/spark-on-k8s-operator/blob/master/manifest/spark-operator.yaml)
