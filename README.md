@@ -48,3 +48,5 @@ to coordinate the communication between the containers that host different aspec
 [K8s services in different namespaces](https://stackoverflow.com/questions/37221483/kubernetes-service-located-in-another-namespace)
 
 [Assigning namespaces to contexts](https://dzone.com/articles/the-why-and-how-of-kubernetes-namespaces)
+
+[Exposing K8s ports](http://alesnosek.com/blog/2017/02/14/accessing-kubernetes-pods-from-outside-of-the-cluster/)
