@@ -30,7 +30,7 @@ object ExtractGitHubData extends DBConnection {
     import spark.implicits._
 
     // Read text files into spark RDD, map to objects and convert to DF
-    val commitsDf = sc.textFile(s"hdfs://10.0.0.9:9000/data/commits_$loadDate.json")
+    val commitsDf = sc.textFile(s"hdfs://a69a5eb199be311e8a6a702607e2f437-556447178.us-west-2.elb.amazonaws.com:50070/data/commits_$loadDate.json")
       .persist(MEMORY_ONLY_SER)
       .flatMap{s => extractCommit(s, loadDate)}
       .repartition(500)(Ordering[CommitRecord])
