@@ -50,3 +50,5 @@ to coordinate the communication between the containers that host different aspec
 [Assigning namespaces to contexts](https://dzone.com/articles/the-why-and-how-of-kubernetes-namespaces)
 
 [Exposing K8s ports](http://alesnosek.com/blog/2017/02/14/accessing-kubernetes-pods-from-outside-of-the-cluster/)
+
+[spark-submit with k8s](https://banzaicloud.com/blog/spark-k8s-internals/)
