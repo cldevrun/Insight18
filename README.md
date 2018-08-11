@@ -54,3 +54,5 @@ to coordinate the communication between the containers that host different aspec
 [spark-submit with k8s](https://banzaicloud.com/blog/spark-k8s-internals/)
 
 [2.3.1 Spark Docker image from Google](https://github.com/GoogleCloudPlatform/spark-on-k8s-operator/blob/master/manifest/spark-operator.yaml)
+
+[Spark master and driver](https://stackoverflow.com/questions/34722415/understand-spark-cluster-manager-master-and-driver-nodes)
