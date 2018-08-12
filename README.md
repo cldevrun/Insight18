@@ -56,3 +56,5 @@ to coordinate the communication between the containers that host different aspec
 [2.3.1 Spark Docker image from Google](https://github.com/GoogleCloudPlatform/spark-on-k8s-operator/blob/master/manifest/spark-operator.yaml)
 
 [Spark master and driver](https://stackoverflow.com/questions/34722415/understand-spark-cluster-manager-master-and-driver-nodes)
+
+[kops command line options](https://github.com/kubernetes/kops/blob/master/docs/cli/kops_create_cluster.md)
