@@ -58,8 +58,8 @@ spec:
           - name: datanode
             image: flokkr/hadoop-hdfs-datanode:latest
             resources:
-            requests:
-              cpu: 1000m
+              requests:
+                cpu: 1000m
             volumeMounts:
               - name: config
                 mountPath: "/opt/hadoop/etc/hadoop"
