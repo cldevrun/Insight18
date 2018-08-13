@@ -8,8 +8,7 @@ spec:
   type: LoadBalancer
   ports:
   - port: 50070
-    name: web
-  clusterIP: None
+    name: web  
   selector:
      app: namenode
 ---
