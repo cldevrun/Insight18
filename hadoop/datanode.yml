@@ -1,0 +1,39 @@
+# A headless service to create DNS records.
+apiVersion: v1
+kind: Service
+metadata:
+  name: hdfs-datanode
+  labels:
+    app: hdfs-datanode
+spec:
+  type: LoadBalancer
+  ports:
+  - port: 50010
+    name: fs
+  selector:
+    app: hdfs-datanode
+---
+apiVersion: apps/v1beta1
+kind: StatefulSet
+metadata:
+  name: hdfs-datanode
+spec:
+  serviceName: "hdfs-datanode"
+  replicas: 5
+  template:
+    metadata:
+      labels:
+        app: hdfs-datanode
+    spec:
+      containers:
+        - name: datanode
+          image: uhopper/hadoop-datanode:2.7.2
+          env:
+            - name: CORE_CONF_fs_defaultFS
+              value: hdfs://aab25ba5d9fe111e8835002aa50c8250-988883421.us-west-2.elb.amazonaws.com:8020
+            - name: HDFS_CONF_dfs_client_use_datanode_hostname
+              value: 'false'
+          ports:
+          - containerPort: 50010
+            name: fs
+      restartPolicy: Always
