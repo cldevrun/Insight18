@@ -6,10 +6,15 @@ metadata:
   labels:
     app: hdfs-namenode
 spec:
-  type: LoadBalancer
   ports:
-  - port: 8020
-    name: fs
+  - protocol: TCP
+    port: 50070
+    targetPort: 50070
+    name: ui
+  - protocol: TCP
+    port: 8020
+    targetPort: 8020
+    name: metadata
   selector:
     app: hdfs-namenode
 ---
@@ -36,8 +41,7 @@ spec:
               value: 'false'
             - name: HDFS_CONF_dfs_namenode_datanode_registration_ip___hostname___check
               value: 'false'
-            - name: HDFS_CONF_dfs_datanode_address
-              value: a3f8a45469ff011e8835002aa50c8250-396304871.us-west-2.elb.amazonaws.com:50010
+            
           ports:
           - containerPort: 8020
             name: fs
