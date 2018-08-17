@@ -3,7 +3,7 @@ import psycopg2
 import pandas as pd
 
 def fetch(query):
-    # connection = psycopg2.connect(database='insight', user='maxroach', host='ec2-52-36-220-17.us-west-2.compute.amazonaws.com', port = 26257)
+    # connection = psycopg2.connect(database='insight', user='maxroach', host='a2cfda652a1db11e8b8ec021f00e2be9-1169393693.us-west-2.elb.amazonaws.com', port = 26257)
     connection = psycopg2.connect(database='insight', user='maxroach', host='internal-CockroachDB-408925475.us-west-2.elb.amazonaws.com', port = 26257)
     df = pd.read_sql(query, connection)
     connection.close()
