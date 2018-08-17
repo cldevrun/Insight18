@@ -1,5 +1,5 @@
 # Set base image to Python 3
-FROM python:3
+FROM python:3.6.5
 
 ENV PYTHONUNBUFFERED 1
 
