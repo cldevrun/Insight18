@@ -18,6 +18,9 @@ kind: StatefulSet
 metadata:
   name: hdfs-datanode
 spec:
+  selector:
+    matchLabels:
+      app: hdfs-datanode
   serviceName: "hdfs-datanode"
   replicas: 5
   template:
@@ -25,6 +28,17 @@ spec:
       labels:
         app: hdfs-datanode
     spec:
+      affinity:
+        podAntiAffinity:
+          requiredDuringSchedulingIgnoredDuringExecution:
+          - labelSelector:
+              matchExpressions:
+              - key: app
+                operator: In
+                values:
+                - hdfs-datanode
+            topologyKey: "kubernetes.io/hostname"
+        
       containers:
         - name: datanode
           image: uhopper/hadoop-datanode:2.7.2
