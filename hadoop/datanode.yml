@@ -6,10 +6,10 @@ metadata:
   labels:
     app: hdfs-datanode
 spec:
-  type: LoadBalancer
   ports:
   - port: 50010
     name: fs
+  clusterIP: None
   selector:
     app: hdfs-datanode
 ---
@@ -30,7 +30,7 @@ spec:
           image: uhopper/hadoop-datanode:2.7.2
           env:
             - name: CORE_CONF_fs_defaultFS
-              value: hdfs://aab25ba5d9fe111e8835002aa50c8250-988883421.us-west-2.elb.amazonaws.com:8020
+              value: hdfs://100.69.112.2:8020
             - name: HDFS_CONF_dfs_client_use_datanode_hostname
               value: 'false'
           ports:
