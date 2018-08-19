@@ -64,3 +64,5 @@ to coordinate the communication between the containers that host different aspec
 [Spark Resource Allocation](http://site.clairvoyantsoft.com/understanding-resource-allocation-configurations-spark-application/)
 
 [K8s dashboard with kops](https://ramhiser.com/post/2018-05-20-setting-up-a-kubernetes-cluster-on-aws-in-5-minutes/)
+
+[K8s dashboard ui update](https://github.com/kubernetes/dashboard/wiki/Accessing-Dashboard---1.7.X-and-above)
