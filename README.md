@@ -62,3 +62,5 @@ to coordinate the communication between the containers that host different aspec
 [Spark master out of sync with workers](https://stackoverflow.com/questions/29982559/unable-to-run-sparkpi-on-apache-spark-cluster)
 
 [Spark Resource Allocation](http://site.clairvoyantsoft.com/understanding-resource-allocation-configurations-spark-application/)
+
+[K8s dashboard with kops](https://ramhiser.com/post/2018-05-20-setting-up-a-kubernetes-cluster-on-aws-in-5-minutes/)
