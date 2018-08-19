@@ -68,3 +68,5 @@ to coordinate the communication between the containers that host different aspec
 [K8s dashboard ui update](https://github.com/kubernetes/dashboard/wiki/Accessing-Dashboard---1.7.X-and-above)
 
 [See K8s cpu/mem graphs in dashboard](https://github.com/kubernetes/dashboard/issues/1867)
+
+[Restart a K8s pod](https://stackoverflow.com/questions/40259178/how-to-retry-image-pull-in-a-kubernetes-pods)
