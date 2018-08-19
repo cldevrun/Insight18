@@ -1,3 +1,14 @@
+# This is a script to install the kops and kubectl commands.
+
+# ASSUMPTIONS      -- READ CAREFULLY!!!!! --
+
+# This script assumes that the user intends to create a 
+# Kubernetes cluster using Amazon's kops command. This script
+# also assumes you intend to create these instances with Amazon's
+# custom base Linux image. Also, after you install these commands,
+# you must configure your instance to use your AWS credentials
+# using the AWS command line. 
+
 # Install kops
 
 wget -O kops https://github.com/kubernetes/kops/releases/download/$(curl -s https://api.github.com/repos/kubernetes/kops/releases/latest | grep tag_name | cut -d '"' -f 4)/kops-linux-amd64
