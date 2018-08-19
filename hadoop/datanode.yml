@@ -1,4 +1,11 @@
-# A headless service to create DNS records.
+# This is the Kubernetes yaml file to create the datanodes that will
+# communicate with the namenode of the Hadoop Distributed File System.
+
+# NOTE: Before creating the datanode resources, you will have to specify
+# the ADDRESS of the namenode (ip of your namenode pod) within the 
+# environment variable CORE_CONF_fs_defaultFS
+
+# Service to expose port 50010 of the datanode pod. 
 apiVersion: v1
 kind: Service
 metadata:
@@ -6,6 +13,9 @@ metadata:
   labels:
     app: hdfs-datanode
 spec:
+  # NEVER, EVER, change port 50010, PERIOD!!!!
+  # This is the port data nodes will use to do the data transfer. 
+  # The data transer will not happen if any other port is specified. 
   ports:
   - port: 50010
     name: fs
@@ -22,6 +32,7 @@ spec:
     matchLabels:
       app: hdfs-datanode
   serviceName: "hdfs-datanode"
+  # Creates 5 datanode pods the HDFS namenode can talk with
   replicas: 5
   template:
     metadata:
@@ -43,11 +54,21 @@ spec:
         - name: datanode
           image: uhopper/hadoop-datanode:2.7.2
           env:
+            # This corresponds to the fs.defaultFS variable defined
+            # within HDFS core-site.xml, which defines the url of 
+            # the namenode the datanodes report to. 
+            # This value must be changed to reflect the namenode
+            # pod ip address assigned by Kubernetes. 
             - name: CORE_CONF_fs_defaultFS
               value: hdfs://100.69.112.2:8020
+            # This makes sure that datanodes don't use the private
+            # ec2 instance ips, and use the ip addresses assigned
+            # by Kubernetes. 
             - name: HDFS_CONF_dfs_client_use_datanode_hostname
               value: 'false'
           ports:
+          # Don't change, this is the port used for data transferring
+          # by the data nodes that talk to the HDFS name nodes. 
           - containerPort: 50010
             name: fs
       restartPolicy: Always

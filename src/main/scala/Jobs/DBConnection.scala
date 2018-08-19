@@ -5,6 +5,8 @@ package Jobs
   */
 trait DBConnection {
   // CockroachDB settings
+  // This String value must be changed to point to the public ip assigned by
+  // Kubernetes for CockroachDB
   private val host: String = "a2cfda652a1db11e8b8ec021f00e2be9-1169393693.us-west-2.elb.amazonaws.com"
   private val port: Int = 26257
   private val database: String = "insight"

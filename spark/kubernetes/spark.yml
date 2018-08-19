@@ -1,3 +1,12 @@
+# This is the Kubernetes yaml file used to create the spark master 
+# and worker. 
+
+# The container images referenced could probably be changed to 
+# the images created by uhopper, but you can also build your own
+# images of Spark and push it to Dockerhub, from then you can reference
+# in this yaml file. However, you can use my own images as long as they
+# continue to exist within Dockerhub. 
+
 apiVersion: v1
 kind: Namespace
 metadata:
@@ -26,9 +35,7 @@ spec:
           ports:
             - containerPort: 7077
             - containerPort: 8080
-          resources:
-            limits:
-              cpu: 1300m
+         
 
 ---
 
@@ -37,7 +44,6 @@ apiVersion: v1
 metadata:
   name: spark-master
 spec:
-  type: LoadBalancer
   ports:
     - port: 7077
       targetPort: 7077
@@ -50,11 +56,12 @@ kind: Service
 apiVersion: v1
 metadata:
   name: spark-webui
-  namespace: spark-cluster
+  
 spec:
+  type: LoadBalancer  
   ports:
     - port: 8080
-      targetPort: 8080
+      nodePort: 30048     
   selector:
     component: spark-master
 
@@ -65,7 +72,7 @@ apiVersion: extensions/v1beta1
 metadata:
   name: spark-worker-deployment
 spec:
-  replicas: 5
+  replicas: 2
   selector:
     matchLabels:
       component: spark-worker      
@@ -80,6 +87,3 @@ spec:
           command: ["/spark-worker"]
           ports:
             - containerPort: 8081
-          resources:
-            limits:
-              cpu: 1000m

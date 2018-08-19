@@ -30,6 +30,8 @@ object ExtractGitHubData extends DBConnection {
     import spark.implicits._
 
     // Read text files into spark RDD, map to objects and convert to DF
+    // The HDFS link must be changed to reflect the ip of your HDFS
+    // name node assigned by Kubernetes. 
     val commitsDf = sc.textFile(s"hdfs://100.96.1.3:8020/data/commits_$loadDate.json")
       .persist(MEMORY_ONLY_SER)
       .flatMap{s => extractCommit(s, loadDate)}

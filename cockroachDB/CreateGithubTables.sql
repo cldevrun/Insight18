@@ -1,3 +1,9 @@
+
+-- Taken from Eric's GitHub repo
+-- Table for imports added in, which was missing in his repo
+-- in order for the Spark job to complete successfully 
+
+-- Use database named insight
 USE insight;
 
 -- received_commits
@@ -89,4 +95,14 @@ SELECT language_name,
 		language_name
 ;
 
-CREATE TABLE _change
+
+-- NEW table design for imports based on how
+-- it's referenced in the application
+DROP TABLE IF EXISTS imports ;
+CREATE TABLE imports (
+	commit_date DATE,
+	language_name VARCHAR(64),
+	import_name VARCHAR(1024),
+	usage_count INT
+	)
+;
