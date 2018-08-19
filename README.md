@@ -58,3 +58,5 @@ to coordinate the communication between the containers that host different aspec
 [Spark master and driver](https://stackoverflow.com/questions/34722415/understand-spark-cluster-manager-master-and-driver-nodes)
 
 [kops command line options](https://github.com/kubernetes/kops/blob/master/docs/cli/kops_create_cluster.md)
+
+[Spark master out of sync with workers](https://stackoverflow.com/questions/29982559/unable-to-run-sparkpi-on-apache-spark-cluster)
