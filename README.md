@@ -60,3 +60,5 @@ to coordinate the communication between the containers that host different aspec
 [kops command line options](https://github.com/kubernetes/kops/blob/master/docs/cli/kops_create_cluster.md)
 
 [Spark master out of sync with workers](https://stackoverflow.com/questions/29982559/unable-to-run-sparkpi-on-apache-spark-cluster)
+
+[Spark Resource Allocation](http://site.clairvoyantsoft.com/understanding-resource-allocation-configurations-spark-application/)
