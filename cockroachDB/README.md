@@ -12,3 +12,5 @@ the Spark job and Python front end to point to this public external ip.
 
 # Sources
 [Using the CockroachDB cluster](https://www.cockroachlabs.com/blog/running-cockroachdb-on-kubernetes/)
+
+[CockroachDB Yaml file](https://github.com/kubernetes/examples/blob/master/staging/cockroachdb/cockroachdb-statefulset.yaml)
