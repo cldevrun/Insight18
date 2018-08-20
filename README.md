@@ -4,24 +4,33 @@ To help achieve this challenge, I will be using the [work of Eric Pinkham](https
 fellow of the 2018B session, and containerize his project.  
 
 ## Purpose / common use case
-As stated in the title, this project aims to explore the challenge of containerizing a database. 
+In 2013, Docker was created and helped popularized the container technology. Many companies embraced containers,
+because they were not only less resource intensive than a virutal machine, but also portable as well. Even though
+a few years has passed since Docker was first founded, the push for container adoption is still very strong. In 2017,
+the Portworx Container Adoption Survey has found that at least 32% of companies they surveyed spended at least $500k
+or more on this technology, which was up 5% from the last time the survey was conducted in 2016. Yet despite this growth,
+the same 2017 survey has also found that 38% of companies cite data as the #1 bottleneck towards container adoption, and 
+this is where my projoect comes in.
+
+My project aims to explore the challenge of containerizing a database. 
 Because of their portability and efficiency on using system resources, containers are increasingly
 being adopted by many companies. But the database is one of the hardest challenges to container 
 adoption due to problems like data insecurity and specific hardware requirements required to run it. 
-By containerizing a database, developers will be able to bring CI/CD principles to their database.
-In addition, by running a db on containers, we get performance benefits which may not be possible from running a db
-using virtualization. Lastly, it makes it more feasible for devlopers to move an entire app from a 
-host provider, and prevent them from being locked to a specfic cloud vendor to host their application. 
+By containerizing a database, developers will be one step closer towards a fully containerized pipeline. 
+In addition, by running a database on containers, we get performance benefits which may not be possible 
+from running a database using virtualization. 
 
 ## Technologies well suited to solve the potential challenges
 
-From Eric's pipeline: Apache Airflow, Hadoop HDFS, Apache Spark, Amazon Elastic Load Balancer, Cockroach DB, Dash
-New Technologies adopted: Docker,Kubernetes Orchestration? 
+From Eric's pipeline: Hadoop HDFS, Apache Spark, Cockroach DB, Dash
+New Technologies adopted: Docker, Kubernetes, Kops 
 
-## Proposed Architecture
+## Architecture
 
-Take Eric's work and encompass each aspect of his app inside a Docker container. Kubernetes will be used
-to coordinate the communication between the containers that host different aspects of the application. 
+Take Eric's work and encompass each aspect of his app (Hadoop HDFS, Apache Spark, Cockroach DB, Dash) inside a Docker container image. Kubernetes will then be used to coordinate the communication between the containers that host different aspects of the application. 
+
+In particular, I have one Kubernetes cluster running Spark and Hadoop HDFS together, another Kubernetes cluster running
+CockroachDB, and a simple Docker container to display the web user interface. 
 
 # Sources
 
