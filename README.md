@@ -10,7 +10,7 @@ a few years has passed since Docker was first founded, the push for container ad
 the Portworx Container Adoption Survey has found that at least 32% of companies they surveyed spended at least $500k
 or more on this technology, which was up 5% from the last time the survey was conducted in 2016. Yet despite this growth,
 the same 2017 survey has also found that 38% of companies cite data as the #1 bottleneck towards container adoption, and 
-this is where my projoect comes in.
+this is where my project comes in.
 
 My project aims to explore the challenge of containerizing a database. 
 Because of their portability and efficiency on using system resources, containers are increasingly
