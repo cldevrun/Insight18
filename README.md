@@ -33,7 +33,9 @@ Take Eric's work and encompass each aspect of his app (Hadoop HDFS, Apache Spark
 In particular, I have one Kubernetes cluster running Spark and Hadoop HDFS together, another Kubernetes cluster running
 CockroachDB, and a simple Docker container to display the web user interface. 
 
-![Dashboard](./picAssets/frontEnd.png).
+![Dashboard](./picAssets/frontEnd.png)
+
+![cock](./picAssets/cockroachDB.png)
 
 ## Overall Setup
 

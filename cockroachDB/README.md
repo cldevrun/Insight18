@@ -18,6 +18,8 @@ GRANT permisions to maxroach to use all current tables in database insight -> ``
 LASTLY, take note of the external ip of the cockroach-public service, you will need this info to configure 
 the Spark job and Python front end to point to this public external ip. 
 
+![CockroachDB](../picAssets/Cockroach.png)
+
 # Sources
 [Using the CockroachDB cluster](https://www.cockroachlabs.com/blog/running-cockroachdb-on-kubernetes/)
 
