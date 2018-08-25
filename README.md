@@ -33,6 +33,8 @@ Take Eric's work and encompass each aspect of his app (Hadoop HDFS, Apache Spark
 In particular, I have one Kubernetes cluster running Spark and Hadoop HDFS together, another Kubernetes cluster running
 CockroachDB, and a simple Docker container to display the web user interface. 
 
+![alt text](https://github.com/cldevrun/Insight18/picAssets/frontEnd)
+
 ## Overall Setup
 
 To get this project up and running, you will need to create the clusters, configure the cluster for Hadoop HDFS,
