@@ -37,8 +37,22 @@ CockroachDB, and a simple Docker container to display the web user interface.
 
 To get this project up and running, you will need to create the clusters, configure the cluster for Hadoop HDFS,
 configure cluster for CockroachDB, configure the Python Front end set up, create the sbt jar file Spark will use,
-configure the same cluster HDFS is on to run Spark as well, and then you can see the pipeline in actiion by 
+configure the SAME cluster HDFS is on to run Spark as well, and then you can see the pipeline in action by 
 running the commands within pipeline-commands.txt
+
+[Create Kubernetes cluster](https://github.com/cldevrun/Insight18/tree/master/aws)
+
+[Configure cluster for HDFS](https://github.com/cldevrun/Insight18/tree/master/hadoop)
+
+[Configure cluster for CockroachDB](https://github.com/cldevrun/Insight18/tree/master/cockroachDB)
+
+[Configure the Python Front End](https://github.com/cldevrun/Insight18/tree/master/python/pythonFrontEnd)
+
+[Create the sbt jar file](https://github.com/cldevrun/Insight18/tree/master/src/main/scala/Jobs)
+
+[Configure cluster for HDFS AND SPARK now](https://github.com/cldevrun/Insight18/tree/master/spark)
+
+[Run commands](https://github.com/cldevrun/Insight18/blob/master/pipeline-commands.txt)
 
 # Sources
 
