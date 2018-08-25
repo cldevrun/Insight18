@@ -13,6 +13,10 @@ Once the namenode pod has been deployed, deploy the datanode.yml file after conf
 ip. Once it is up and running, the the datanodes will ping the namenode and that is how the namenode will know who
 to talk to when it has to conduct map reduce operations. 
 
+## Important Reminder
+
+Take note of the pod ip for the HDFS namenode. The Spark job will be using this ip when it talks to HDFS.
+
 # Sources
 
 [HDFS ports](https://ambari.apache.org/1.2.3/installing-hadoop-using-ambari/content/reference_chap2_1.html)
