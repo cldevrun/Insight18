@@ -29,7 +29,7 @@ rm ~/commits_2018-08-23.bson
 # This command can be ran once if the HDFS namenode and CockroachDB ips don't change every time you use a new GHTorrent file
 kubectl cp insight-assembly-1.0.jar SPARKMASTERPODNAME:/
 
-# Log into spark master pod and & run spark-submit command locally
+# Log into spark master pod and & run spark-submit command locally ~15min completion
 kubectl exec -ti SPARKMASTERPODNAME /bin/bash
 spark-submit  --class Jobs.ExtractGitHubData --jars insight-assembly-1.0.jar  --executor-memory 25G --executor-cores 5 --num-executors 1 insight-assembly-1.0.jar  2018-08-23
 
