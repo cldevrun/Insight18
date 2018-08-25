@@ -1,0 +1,80 @@
+# This is the file used to keep track of the commands the pipeline would execute
+# These commands were executed manually by hand in different places, and if more time existed, these would be executed in an 
+# automated fashion using tools like Airflow. 
+
+# Name of GHTorrent file dump for a particular day as specified. 
+mongo-dump-2018-08-23.tar.gz   
+
+# Executed within the EC2 instance managing the cluster running HDFS and Spark together. 
+# This creates the bson file to be used by HDFS
+wget -qO- http://ghtorrent-downloads.ewi.tudelft.nl/mongo-daily/mongo-dump-2018-08-23.tar.gz  | tar xvz dump/github/commits.bson --strip-components=2
+
+# Simply renaming the bson file to a more appropriate name. 
+mv commits.bson commits_2018-08-23.bson
+
+# Copying over necessary files the HDFS name node needs from the EC2 instance managing the 
+# cluster running HDFS and Spark together
+kubectl cp bsondump HDFSNAMENODEPODNAME:/                 # can be done once, just needed to send bsondump command to namenode
+kubectl cp commits_2018-08-23.bson HDFSNAMENODEPODNAME:/  # may take some time to copy over, ~30GB in size
+
+# Run commands within HDFS Name Node pod
+kubectl exec -ti HDFSNAMENODEPODNAME /bin/bash
+# Creates the HDFS file to be used by Spark, ~15 min to create. 
+./bsondump commits_2018-08-23.bson | hdfs dfs -appendToFile - hdfs://NAMENODEPODIP/data/commits_2018-08-23.json
+
+# Remove this file from both HDFS namenode pod & managing EC2 instance to save space. 
+rm ~/commits_2018-08-23.bson 
+
+# Assuming the sbt assembly jar was built correctly, you need to move it to the Spark master pod
+# This command can be ran once if the HDFS namenode and CockroachDB ips don't change every time you use a new GHTorrent file
+kubectl cp insight-assembly-1.0.jar SPARKMASTERPODNAME:/
+
+# Log into spark master pod and & run spark-submit command locally
+kubectl exec -ti SPARKMASTERPODNAME /bin/bash
+spark-submit  --class Jobs.ExtractGitHubData --jars insight-assembly-1.0.jar  --executor-memory 25G --executor-cores 5 --num-executors 1 insight-assembly-1.0.jar  2018-08-23
+
+# After spark job is done, it is suggested to clear space within HDFS to process the next day's worth of GitHub commits
+kubectl exec -ti HDFSNAMENODEPODNAME /bin/bash
+hadoop fs -rm /data/*
+hadoop fs -expunge
+
+# Switching over from cluster managing Spark/HDFS to cluster managing CockroachDb
+kubectl config use-context COCKROACHDBCLUSTERNAME
+
+# Connect to cockroach db & run some queries 
+kubectl run cockroachdb -it --image=cockroachdb/cockroach --rm --restart=Never -- sql --insecure --host=cockroachdb-public
+
+USE insight;
+
+UPSERT INTO daily_import_summary (
+    	summary_date,
+    	language_name,
+    	import_name,
+    	usage_count
+    )
+    SELECT  commit_date,
+    		language_name,
+    		import_name,
+    		usage_count
+    	FROM (SELECT	commit_date,
+    			language_name,
+    			import_name,
+    			usage_count,
+    			ROW_NUMBER() OVER (PARTITION BY language_name ORDER BY usage_count DESC) AS row_number
+    		FROM commits
+    		WHERE commit_date = '2018-08-23')
+    	WHERE row_number <= 5000;
+
+ UPSERT INTO daily_language_totals (
+    	language_name,
+    	commit_date,
+    	total_daily_usage
+    )
+    SELECT language_name,
+    		commit_date,
+    		CAST(SUM(usage_count) AS INT) AS total_daily_usage
+    	FROM commits
+    	WHERE commit_date = '2018-08-23'
+    	GROUP BY commit_date,
+    		language_name
+    ;
