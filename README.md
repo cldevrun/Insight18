@@ -33,7 +33,7 @@ Take Eric's work and encompass each aspect of his app (Hadoop HDFS, Apache Spark
 In particular, I have one Kubernetes cluster running Spark and Hadoop HDFS together, another Kubernetes cluster running
 CockroachDB, and a simple Docker container to display the web user interface. 
 
-![alt text](https://github.com/cldevrun/Insight18/picAssets/frontEnd)
+![alt text](https://github.com/cldevrun/Insight18/picAssets/frontEnd.png)
 
 ## Overall Setup
 
