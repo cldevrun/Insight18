@@ -23,6 +23,7 @@ from running a database using virtualization.
 ## Technologies well suited to solve the potential challenges
 
 From Eric's pipeline: Hadoop HDFS, Apache Spark, Cockroach DB, Dash
+
 New Technologies adopted: Docker, Kubernetes, Kops 
 
 ## Architecture
@@ -31,6 +32,13 @@ Take Eric's work and encompass each aspect of his app (Hadoop HDFS, Apache Spark
 
 In particular, I have one Kubernetes cluster running Spark and Hadoop HDFS together, another Kubernetes cluster running
 CockroachDB, and a simple Docker container to display the web user interface. 
+
+## Overall Setup
+
+To get this project up and running, you will need to create the clusters, configure the cluster for Hadoop HDFS,
+configure cluster for CockroachDB, configure the Python Front end set up, create the sbt jar file Spark will use,
+configure the same cluster HDFS is on to run Spark as well, and then you can see the pipeline in actiion by 
+running the commands within pipeline-commands.txt
 
 # Sources
 
