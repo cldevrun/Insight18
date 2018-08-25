@@ -12,7 +12,8 @@ This guide assumes you intend to create a Kubernetes cluster using instances hos
 part, the steps I took largely reflect what was written on the AWS kops page linked below. 
 
 1. The first thing you would need to do is to install the kubectl and kops command onto the EC2 instance where you 
-will manage your clusters. This action can easily be done by executing the kops-install.sh file. 
+will manage your clusters. This action can easily be done by executing the kops-install.sh file. Also, ```cd``` into
+your .ssh folder and run ```ssh-keygen``` to create your own id_rsa key, which will be used later with kops create secret.
 
 2. After that, you have to give the IAM user the appropriate permissions (AmazonEC2FullAccess, 
 AmazonRoute53FullAccess, AmazonS3FullAccess, IAMFullAccess, AmazonVPCFullAccess). At this point, you should 
