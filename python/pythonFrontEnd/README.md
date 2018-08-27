@@ -15,3 +15,5 @@ and execute this command to run the image you just created.
 ```
 docker run -d -p 5001:5001 -p 26257:26257 IMAGENAME
 ```
+
+Your public front end should now be visible on your instance ip on port 5001.
