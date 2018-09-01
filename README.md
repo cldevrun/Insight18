@@ -3,6 +3,11 @@ My project explores the challenge of containerizing a data engineering pipeline 
 To help achieve this challenge, I will be using the [work of Eric Pinkham](https://github.com/ericapinkham/Insight_DE_GUS.git), an Insight Data Engineering
 fellow of the 2018B session, and containerize his project.  
 
+# Demo
+https://www.youtube.com/watch?v=Mz_iTK0GiQo
+Shows working Python front end, Kubernetes dashboard displaying HDFS/Spark on a cluster, CockroachDB dashboard,
+Kubernetes Stateful Set of CockroachDB, and the automatic recovery of restarting a failed CockroachDB pod worker.
+
 ## Purpose / common use case
 In 2013, Docker was created and helped popularized the container technology. Many companies embraced containers,
 because they were not only less resource intensive than a virutal machine, but also portable as well. Even though
