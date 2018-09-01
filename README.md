@@ -5,6 +5,7 @@ fellow of the 2018B session, and containerize his project.
 
 # Demo
 https://www.youtube.com/watch?v=Mz_iTK0GiQo
+
 Shows working Python front end, Kubernetes dashboard displaying HDFS/Spark on a cluster, CockroachDB dashboard,
 Kubernetes Stateful Set of CockroachDB, and the automatic recovery of restarting a failed CockroachDB pod worker.
 
